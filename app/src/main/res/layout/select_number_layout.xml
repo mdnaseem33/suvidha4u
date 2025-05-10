@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_10sdp"
+    android:textSize="16sp"
+    android:drawablePadding="10dp"
+    android:textColor="@color/purple_700"
+    app:drawableTint="@color/purple_700"
+    tools:text="select installment frequecny">
+
+</TextView>

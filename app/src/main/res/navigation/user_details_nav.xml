@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_details_nav"
+    app:startDestination="@id/userDetailHomeFragment">
+
+    <fragment
+        android:id="@+id/userDetailHomeFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.user.fragments.UserDetailHomeFragment"
+        android:label="fragment_user_detail_home"
+        tools:layout="@layout/fragment_user_detail_home" />
+</navigation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/active"
+        android:title="Active"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/removed"
+        android:title="Removed"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/pending"
+        android:title="Pending"
+        android:checkable="true"/>
+</menu>

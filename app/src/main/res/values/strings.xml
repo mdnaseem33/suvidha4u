@@ -1,0 +1,166 @@
+<resources>
+    <string name="app_name">Suvidha 4U</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_title">Months of EMI</string>
+    <string name="no_data_found">No Records Found</string>
+    <string name="data_found">Recent Call logs</string>
+    <string name="recent_location">Recent locations</string>
+    <string name="agreement">Agreement</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="banner_image">Banner Image</string>
+    <string name="smartkey">SmartKey</string>
+    <string name="superkey">SuperKey</string>
+    <string name="home_appliance">Home Appliance</string>
+    <string name="udhar">Udhar</string>
+    <string name="explore_more">Explore more</string>
+    <string name="today_activation">Today Activation</string>
+    <string name="total_customer">Total Customer</string>
+    <string name="active_customer">Active Customer</string>
+    <string name="videos_you_might_like">Videos you might like</string>
+    <string name="statistics">Statistics</string>
+    <string name="setting">Setting</string>
+    <string name="people">People</string>
+    <string name="home">Home</string>
+    <string name="upcoming_emi">Upcoming EMI\'s</string>
+    <string name="video_tutorial">Actication Video</string>
+    <string name="what_new">What\'s New</string>
+    <string name="helpdesk_support">Helpdesk Support</string>
+    <string name="_022_69646511">011-69290609</string>
+    <string name="_24_7_all_days">24*7 (All Days)</string>
+    <string name="plus_member">Plus Member</string>
+    <string name="total_user">Total User</string>
+    <string name="active_user">Active User</string>
+    <string name="_237">237</string>
+    <string name="used_credit">Used Key</string>
+    <string name="credit_available">Key Available</string>
+    <string name="anti_used_credit">Used Anti-theft Key</string>
+    <string name="anti_credit_available">Anti-theft Key Available</string>
+    <string name="credit_transaction">Key Transaction</string>
+    <string name="ecs_payment">ECS Payment</string>
+    <string name="add_customer">Add Customer</string>
+    <string name="question_mark">Question Mark</string>
+    <string name="mobile_frp_protection">Mobile FRP Protection</string>
+    <string name="edit_button">Edit Button</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_details">Customer Details</string>
+    <string name="imei_number">IMEI Number</string>
+    <string name="please_sign_here_or_enter_to_continue">Please sign here or continue</string>
+    <string name="clear_sign">Clear Sign</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="loan_number">Loan Number</string>
+    <string name="mobile_brand">Mobile Brand</string>
+    <string name="model_no">Model No.</string>
+    <string name="add_reference_name">Add Reference Details</string>
+    <string name="finance_company">Finance Company</string>
+    <string name="reference_name">Reference Name</string>
+    <string name="reference_mobile_no">Reference Mobile No.</string>
+    <string name="loan_details">Loan Details</string>
+    <string name="product_price">Product Price</string>
+    <string name="down_payment">Down Payment</string>
+    <string name="loan_amount">Loan Amount</string>
+    <string name="how_do_you_want_to_collect_this_amount">How do you want to collect this amount?</string>
+    <string name="collect_in_emi">Collect in EMI</string>
+    <string name="one_time_payment">No EMI</string>
+    <string name="frequency_of_collection">Frequency of collection</string>
+    <string name="installment_frequency">Installment Frequency</string>
+    <string name="how_many_installments">How many installments?</string>
+    <string name="number_of_installments">Number of installments</string>
+    <string name="when_do_you_want_to_start_collection">When do you want to start collection?</string>
+    <string name="collection_start_date">Collection start date</string>
+    <string name="add_photo_and_documnets">Add photo and documnets</string>
+    <string name="customer_photo">Customer Photo</string>
+    <string name="add">Add</string>
+    <string name="customer_signature">Customer\nSignature</string>
+    <string name="update">Update</string>
+    <string name="customer_id_front">Customer ID (Front)</string>
+    <string name="customer_id_back">Customer ID (Back)</string>
+    <string name="reference_id_front">Reference ID (Front)</string>
+    <string name="reference_id_back">Reference ID (Back)</string>
+    <string name="register">Register</string>
+    <string name="_1710412051">1710412051</string>
+    <string name="exit">Exit</string>
+    <string name="customer_list">Customers</string>
+    <string name="imei">IMEI:</string>
+    <string name="created">Created:</string>
+    <string name="type">Type:</string>
+    <string name="brand">Brand:</string>
+    <string name="model">Model:</string>
+    <string name="active">active</string>
+    <string name="download">Download</string>
+    <string name="controller">Controller</string>
+    <string name="unlocked">unlocked</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="name">Name:</string>
+    <string name="ph_no">Ph no. :</string>
+    <string name="last_sync">Last Sync :</string>
+    <string name="refrence_details">Refrence Details</string>
+    <string name="product_type_nmobile">Product Type\nMobile</string>
+    <string name="on">On</string>
+    <string name="remove_key">Remove Key</string>
+    <string name="done">Done</string>
+    <string name="serial_no">Serial no.</string>
+    <string name="how_much_money_do_you_want_to_collect">How much money do you want to collect?</string>
+    <string name="total_amount">Total amount</string>
+    <string name="who_do_you_want_to_collect_it_from">Who do you want to collect it from?</string>
+    <string name="customer_mobile_number">Customer mobile number</string>
+    <string name="what_is_this_collection_for">What is this collection for?</string>
+    <string name="bill_details_item_name_bill_no_etc">Bill Details (item name, bill no. etc..)</string>
+    <string name="loan">Loan</string>
+    <string name="allow_rocketpay">Allow RocketPay to charge rs50 penalty for every\nbounced installment.</string>
+    <string name="e_mandate_ecs">E-Mandate(ECS)</string>
+    <string name="what_is_upi_autopay_nach"><u>What is UPI Autopay, NACH?</u></string>
+    <string name="share_payment_link">Share payment link</string>
+    <string name="mobile_lock">Mobile Lock</string>
+    <string name="outgoing_call">Outgoing call</string>
+    <string name="app_install">App install</string>
+    <string name="status_bar">Status bar</string>
+    <string name="app_unistall">App Unistall</string>
+    <string name="volume_lock">Volume Lock</string>
+    <string name="sms_lock">Sms Lock</string>
+    <string name="offline_lock">Offline Lock</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="search_by_name_id_imei_mobile_no"><![CDATA[Search by Name, ID, IMEI & Mobile No.]]></string>
+</resources>

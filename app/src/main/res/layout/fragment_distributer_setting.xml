@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context=".dashboard.settings.SettingFragment">
+
+    <include
+        android:id="@+id/report"
+        layout="@layout/setting_item" />
+
+    <include
+        android:id="@+id/password"
+        layout="@layout/setting_item" />
+
+    <include
+        android:id="@+id/profile"
+        layout="@layout/setting_item" />
+
+    <include
+        android:id="@+id/support"
+        layout="@layout/setting_item" />
+
+    <include
+        android:id="@+id/logout"
+        layout="@layout/setting_item" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Helpdesk Support"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp" />
+
+<!--    <View-->
+<!--        android:id="@+id/divider"-->
+<!--        android:layout_width="@dimen/_100sdp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:background="@color/black" />-->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/roboto_medium"
+        android:text="022-69646511"
+        android:linksClickable="true"
+        android:autoLink="phone"
+        android:textColorLink="@color/light_blue"
+        android:textColor="@color/light_blue"
+        android:textSize="@dimen/_12sdp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/roboto_medium"
+        android:text="24*7 (All Days)"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp" />
+
+
+</LinearLayout>

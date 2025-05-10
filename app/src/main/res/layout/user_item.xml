@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@drawable/user_bg"
+    android:paddingStart="@dimen/_20sdp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id" />
+
+    <TextView
+        android:id="@+id/imei1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Imei : "
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+
+    <TextView
+        android:id="@+id/created"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Created : "
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/imei1_tv" />
+
+    <TextView
+        android:id="@+id/sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Type : "
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/created" />
+
+    <TextView
+        android:id="@+id/imei1_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toEndOf="@id/imei1_tv"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+
+    <TextView
+        android:id="@+id/created_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toEndOf="@id/created"
+        app:layout_constraintTop_toBottomOf="@id/imei1_value" />
+
+    <TextView
+        android:id="@+id/key_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toEndOf="@id/sync"
+        app:layout_constraintTop_toBottomOf="@id/created" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/status_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_medium"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        app:cornerRadius="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imei1_tv"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="@id/sync"
+        tools:text="active" />
+
+    <ImageButton
+        android:id="@+id/optionsButton"
+        android:layout_width="47dp"
+        android:layout_height="52dp"
+        android:background="@color/zxing_transparent"
+        android:src="@drawable/baseline_more_horiz_24"
+        app:layout_constraintBottom_toTopOf="@id/bankImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bankImage"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@id/status_btn"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@id/status_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/brandDes"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/key_type">
+
+        <TextView
+            android:id="@+id/brandText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Brand : "
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_12sdp" />
+        <ImageView
+            android:id="@+id/brandImage"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"/>
+        <TextView
+            android:id="@+id/modelValue"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Model : "
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/home_bg">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:text="@string/name"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:textColor="#03A9F4"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/name_tv"
+        app:layout_constraintStart_toEndOf="@id/name_tv"
+        app:layout_constraintTop_toTopOf="@id/name_tv"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/p_no_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:text="@string/ph_no"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="@id/name_tv"
+        app:layout_constraintTop_toBottomOf="@id/name_tv" />
+
+    <TextView
+        android:id="@+id/p_no_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/p_no_tv"
+        app:layout_constraintStart_toEndOf="@id/p_no_tv"
+        app:layout_constraintTop_toTopOf="@id/p_no_tv"
+        tools:text="" />
+
+    <ImageView
+        android:id="@+id/bankImage"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/div1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/div1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/p_no_tv" />
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/p_no1_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/_10sdp"-->
+<!--        android:fontFamily="@font/roboto_bold"-->
+<!--        android:gravity="start"-->
+<!--        android:text="Ph no1 : "-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/name_tv"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/div1" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/p_no1_value_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/roboto_bold"-->
+<!--        android:gravity="start"-->
+<!--        android:text="-&#45;&#45;"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/p_no1_tv"-->
+<!--        app:layout_constraintStart_toEndOf="@id/p_no1_tv"-->
+<!--        app:layout_constraintTop_toTopOf="@id/p_no1_tv" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/network_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/_5sdp"-->
+<!--        android:fontFamily="@font/roboto_bold"-->
+<!--        android:gravity="start"-->
+<!--        android:text="Network : "-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/name_tv"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/p_no1_value_tv" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/network_value_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/roboto_bold"-->
+<!--        android:gravity="start"-->
+<!--        android:text="-&#45;&#45;"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/network_tv"-->
+<!--        app:layout_constraintStart_toEndOf="@id/network_tv"-->
+<!--        app:layout_constraintTop_toTopOf="@id/network_tv" />-->
+
+
+<!--    <View-->
+<!--        android:id="@+id/div2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/_1sdp"-->
+<!--        android:layout_marginTop="@dimen/_5sdp"-->
+<!--        android:background="@color/blue"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/network_value_tv" />-->
+
+
+    <TextView
+        android:id="@+id/model_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:text="@string/imei"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="@id/name_tv"
+        app:layout_constraintTop_toBottomOf="@id/div1" />
+
+    <TextView
+        android:id="@+id/model_value_tv"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start|bottom"
+        android:maxWidth="@dimen/_85sdp"
+        android:maxLines="2"
+        android:layout_marginStart="5dp"
+        android:text=""
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/model_tv"
+        app:layout_constraintStart_toEndOf="@id/model_tv"
+        app:layout_constraintTop_toTopOf="@id/model_tv" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/brand"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/model_tv"
+        app:layout_constraintStart_toStartOf="@+id/model_tv"
+        app:layout_constraintBottom_toTopOf="@id/div3" />
+
+    <ImageView
+        android:id="@+id/modelImage"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/type"
+        app:layout_constraintTop_toTopOf="@+id/type"
+        app:layout_constraintBottom_toBottomOf="@+id/type"
+        tools:text="SmartKey" />
+
+    <TextView
+        android:id="@+id/model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/model"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/modelImage"
+        app:layout_constraintStart_toEndOf="@+id/modelImage"
+        app:layout_constraintTop_toTopOf="@+id/modelImage" />
+
+    <TextView
+        android:id="@+id/modelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/greyText"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/model"
+        app:layout_constraintTop_toTopOf="@+id/model"
+        app:layout_constraintBottom_toBottomOf="@+id/model"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/productType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/div3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <View
+        android:id="@+id/div3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="10dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imei2_tv" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div3"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/refrence_details"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/referenceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_700"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/referPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_700"
+            android:textSize="12sp"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sync_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:text="@string/last_sync"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sync_value_tv"
+        app:layout_constraintTop_toBottomOf="@id/div3" />
+
+    <TextView
+        android:id="@+id/sync_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/light_blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/sync_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sync_tv"
+        android:text="" />
+
+
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/date"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="@dimen/_10sdp"-->
+<!--        android:fontFamily="@font/roboto_bold"-->
+<!--        android:text="-&#45;&#45;"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/name_tv"-->
+<!--        tools:text="06/03/2023" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/created_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/roboto_regular"-->
+<!--        android:text="(Created at)"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/date"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/date" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/p_no2_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/_10sdp"-->
+<!--        android:fontFamily="@font/roboto_bold"-->
+<!--        android:text="Ph no.2 : -&#45;&#45; "-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/date"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/div1" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/network_tv2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/roboto_medium"-->
+<!--        android:text="Network : -&#45;&#45;"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/_12sdp"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/date"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/p_no2_tv" />-->
+
+
+    <TextView
+        android:id="@+id/imei1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="IMEI"
+        android:visibility="invisible"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div1" />
+
+
+    <TextView
+        android:id="@+id/imei2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="IMEI 2 : ---"
+        android:visibility="invisible"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="@id/imei1_tv"
+        app:layout_constraintTop_toBottomOf="@id/imei1_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:indeterminateTint="@color/blue"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/user_detail_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="start"
+            android:text="User Details"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Refresh"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/_5sdp"
+            app:icon="@drawable/refresh"
+            app:iconSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@id/user_detail_tv"
+            app:layout_constraintEnd_toStartOf="@id/userimg"
+            app:layout_constraintTop_toTopOf="@+id/user_detail_tv" />
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/userimg"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/people"
+            app:layout_constraintBottom_toBottomOf="@id/user_detail_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/user_detail_tv" />
+
+
+        <include
+            android:id="@+id/user_detail"
+            layout="@layout/user_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="@id/userimg"
+            app:layout_constraintStart_toStartOf="@id/user_detail_tv"
+            app:layout_constraintTop_toBottomOf="@id/user_detail_tv" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/get_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Click here to view users data"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/user_detail_tv"
+            app:layout_constraintTop_toBottomOf="@id/user_detail" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/blue"
+            app:layout_constraintEnd_toEndOf="@id/get_detail"
+            app:layout_constraintStart_toStartOf="@id/get_detail"
+            app:layout_constraintTop_toBottomOf="@id/get_detail" />
+
+        <TextView
+            android:id="@+id/action_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="start"
+            android:text="Action"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="@id/user_detail_tv"
+            app:layout_constraintTop_toBottomOf="@id/get_detail" />
+
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/action_tv">
+
+            <TextView
+                android:id="@+id/basic_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/qr_bg"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="   Basic   "
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="@id/user_detail_tv"
+                app:layout_constraintEnd_toStartOf="@id/userimg"
+                app:layout_constraintTop_toTopOf="@+id/user_detail_tv" />
+
+            <TextView
+                android:id="@+id/application_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/qr_bg"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Advance"
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="@id/user_detail_tv"
+                app:layout_constraintEnd_toStartOf="@id/userimg"
+                app:layout_constraintTop_toTopOf="@+id/user_detail_tv" />
+
+
+            <TextView
+                android:id="@+id/advance_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/qr_bg"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Auto Enable"
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="@id/user_detail_tv"
+                app:layout_constraintEnd_toStartOf="@id/userimg"
+                app:layout_constraintTop_toTopOf="@+id/user_detail_tv" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/home_bg"
+            android:padding="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout2"
+            app:spanCount="4" />
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/offlineLock"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Offline Lock"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/red"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/offlineUnlock"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:layout_margin="8dp"
+                android:text="Offline Unlock"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonActive"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deactivate"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Deactivate Restication"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/red"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/activate"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:layout_margin="8dp"
+                android:text="Activate Restication"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/surrenderbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Remove"
+            android:textAllCaps="false"
+            android:visibility="visible"
+            app:cornerRadius="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/buttonActive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

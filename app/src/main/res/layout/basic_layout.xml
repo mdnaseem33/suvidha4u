@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:paddingVertical="10dp"
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:background="@drawable/radius_blue_15dp_solid_white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/mobilLockState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:padding="5dp"
+            android:text="@string/unlocked"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/mobileUnlockLayout"
+            app:layout_constraintEnd_toEndOf="@+id/mobileUnlockLayout"
+            app:layout_constraintStart_toStartOf="@+id/mobileUnlockLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/mobileUnlockLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/outGoingCallLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+
+            <ImageView
+                android:id="@+id/imageMobileLock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/lock_phone_icon" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textMobileLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/mobile_lock"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/mobileUnlockLayout"
+            app:layout_constraintStart_toStartOf="@+id/mobileUnlockLayout"
+            app:layout_constraintTop_toBottomOf="@+id/mobileUnlockLayout" />
+
+        <TextView
+            android:id="@+id/outGoingCallState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/outGoingCallLayout"
+            app:layout_constraintEnd_toEndOf="@+id/outGoingCallLayout"
+            app:layout_constraintStart_toStartOf="@+id/outGoingCallLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/outGoingCallLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/appInstallLayout"
+            app:layout_constraintStart_toEndOf="@+id/mobileUnlockLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+
+            <ImageView
+                android:id="@+id/ImgoutGoingCallLock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/call_active_outgoing" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textoutGoingCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/outgoing_call"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/outGoingCallLayout"
+            app:layout_constraintStart_toStartOf="@+id/outGoingCallLayout"
+            app:layout_constraintTop_toBottomOf="@+id/outGoingCallLayout" />
+
+        <TextView
+            android:id="@+id/stateBarState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/appInstallLayout"
+            app:layout_constraintEnd_toEndOf="@+id/appInstallLayout"
+            app:layout_constraintStart_toStartOf="@+id/appInstallLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/appInstallLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/statusBarLayout"
+            app:layout_constraintStart_toEndOf="@+id/outGoingCallLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+            <ImageView
+                android:id="@+id/imgAppInstall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/download_app_icon" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textAppInstall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/app_install"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/appInstallLayout"
+            app:layout_constraintStart_toStartOf="@+id/appInstallLayout"
+            app:layout_constraintTop_toBottomOf="@+id/appInstallLayout"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/statusBarState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/statusBarLayout"
+            app:layout_constraintEnd_toEndOf="@+id/statusBarLayout"
+            app:layout_constraintStart_toStartOf="@+id/statusBarLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/statusBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appInstallLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+
+            <ImageView
+                android:id="@+id/imgStatusBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/app_status_bar" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textStatusBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/status_bar"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/statusBarLayout"
+            app:layout_constraintStart_toStartOf="@+id/statusBarLayout"
+            app:layout_constraintTop_toBottomOf="@+id/statusBarLayout"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/appUnistallState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:padding="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/appUnistallLayout"
+            app:layout_constraintEnd_toEndOf="@+id/appUnistallLayout"
+            app:layout_constraintStart_toStartOf="@+id/appUnistallLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/appUnistallLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/volumeLockLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+
+            <ImageView
+                android:id="@+id/imageAppUninstall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/app_unistall" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textAppUnistall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/app_unistall"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/appUnistallLayout"
+            app:layout_constraintStart_toStartOf="@+id/appUnistallLayout"
+            app:layout_constraintTop_toBottomOf="@+id/appUnistallLayout" />
+
+        <TextView
+            android:id="@+id/volumeLockState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/volumeLockLayout"
+            app:layout_constraintEnd_toEndOf="@+id/volumeLockLayout"
+            app:layout_constraintStart_toStartOf="@+id/volumeLockLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/volumeLockLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/smsLockLayout"
+            app:layout_constraintStart_toEndOf="@+id/appUnistallLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+            <ImageView
+                android:id="@+id/ImgVolumeLock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/volume_icon" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textVolumeLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/volume_lock"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/volumeLockLayout"
+            app:layout_constraintStart_toStartOf="@+id/volumeLockLayout"
+            app:layout_constraintTop_toBottomOf="@+id/volumeLockLayout" />
+
+        <TextView
+            android:id="@+id/smsLockState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/smsLockLayout"
+            app:layout_constraintEnd_toEndOf="@+id/smsLockLayout"
+            app:layout_constraintStart_toStartOf="@+id/smsLockLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/smsLockLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/offilneLockLayout"
+            app:layout_constraintStart_toEndOf="@+id/volumeLockLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+            <ImageView
+                android:id="@+id/imgSmsLock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/sms_blue" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textSmsLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/sms_lock"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/smsLockLayout"
+            app:layout_constraintStart_toStartOf="@+id/smsLockLayout"
+            app:layout_constraintTop_toBottomOf="@+id/smsLockLayout"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/offlineLockState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="@drawable/solid_radius_12_green"
+            android:elevation="12dp"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="@string/on"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/offilneLockLayout"
+            app:layout_constraintEnd_toEndOf="@+id/offilneLockLayout"
+            app:layout_constraintStart_toStartOf="@+id/offilneLockLayout"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/offilneLockLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/text_key_radius_grey"
+            android:elevation="10dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/smsLockLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            #1D0B88-->
+
+
+            <ImageView
+                android:id="@+id/imgOfflineLock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/lock_messages" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textOfflineLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/offline_lock"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/offilneLockLayout"
+            app:layout_constraintStart_toStartOf="@+id/offilneLockLayout"
+            app:layout_constraintTop_toBottomOf="@+id/offilneLockLayout"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

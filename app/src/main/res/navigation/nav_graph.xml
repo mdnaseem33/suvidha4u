@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/retailer"
+        android:name="com.martvalley.suvidha_u.dashboard.home.retailer.RetailerFragment"
+        android:label="Retailor"
+        tools:layout="@layout/fragment_retailor" />
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.martvalley.suvidha_u.dashboard.home.retailer.RetailerFragment"
+        android:label="Retailer"
+        tools:layout="@layout/fragment_retailor" />
+    <fragment
+        android:id="@+id/people"
+        android:name="com.martvalley.suvidha_u.dashboard.people.user.UserFragment"
+        android:label="People" />
+
+    <fragment
+        android:id="@+id/user"
+        android:name="com.martvalley.suvidha_u.dashboard.people.user.UserFragment"
+        android:label="User" />
+    <fragment
+        android:id="@+id/qr"
+        android:name="com.martvalley.suvidha_u.dashboard.qr_code.QrFragment"
+        android:label="Qr" />
+    <fragment
+        android:id="@+id/setting"
+        android:name="com.martvalley.suvidha_u.dashboard.settings.SettingFragment"
+        android:label="Setting" />
+
+    <fragment
+        android:id="@+id/distributor"
+        android:name="com.martvalley.suvidha_u.dashboard.home.distributor.DistributorFragment"
+        android:label="Distributor" />
+
+    <action
+        android:id="@+id/home_distributor"
+        app:destination="@id/distributor"
+        app:popUpTo="@id/home"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/home_retailer"
+        app:destination="@id/retailer"
+        app:popUpTo="@id/home"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/people_retailer"
+        android:name="com.martvalley.suvidha_u.dashboard.people.retailer.RetailerListFragment"
+        android:label="fragment_retailer_list"
+        tools:layout="@layout/fragment_retailer_list" />
+    <action
+        android:id="@+id/people_user"
+        app:destination="@id/user"
+        app:popUpTo="@id/home"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/retailerSettingFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.settings.retail.RetailerSettingFragment"
+        android:label="RetailerSettingFragment" />
+    <fragment
+        android:id="@+id/distributerSettingFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.settings.distributor.DistributerSettingFragment"
+        android:label="DistributerSettingFragment" />
+
+
+</navigation>

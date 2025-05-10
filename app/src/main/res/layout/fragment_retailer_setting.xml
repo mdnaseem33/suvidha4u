@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_topbar_layout"
+    android:orientation="vertical"
+    tools:context=".dashboard.settings.SettingFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                android:id="@+id/report"
+                layout="@layout/setting_topbar" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_bg"
+                android:elevation="12dp"
+                android:orientation="vertical"
+                android:paddingBottom="15dp"
+                android:paddingTop="@dimen/_12sdp"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="20dp">
+
+                <include
+                    android:visibility="gone"
+                    android:id="@+id/msg"
+                    layout="@layout/setting_item" />
+
+                <include
+                    android:id="@+id/wallpaper"
+                    layout="@layout/setting_item" />
+
+                <!--    <include-->
+                <!--        android:id="@+id/audio"-->
+                <!--        layout="@layout/setting_item" />-->
+
+                <include
+                    android:id="@+id/password"
+                    layout="@layout/setting_item" />
+
+                <include
+                    android:id="@+id/profile"
+                    layout="@layout/setting_item" />
+                <include
+                    android:id="@+id/frp"
+                    layout="@layout/setting_item" />
+
+                <include
+                    android:id="@+id/qrCode"
+                    layout="@layout/setting_item" />
+                <include
+                    android:visibility="gone"
+                    android:id="@+id/loanPrefix"
+                    layout="@layout/setting_item" />
+                <include
+                    android:id="@+id/support"
+                    layout="@layout/setting_item" />
+
+                <!--    <include-->
+                <!--        android:id="@+id/control"-->
+                <!--        layout="@layout/setting_item" />-->
+
+                <include
+                    android:id="@+id/switcher"
+                    layout="@layout/setting_item" />
+                <include
+                    android:id="@+id/changeLock"
+                    layout="@layout/setting_item" />
+                <include
+                    android:id="@+id/logout"
+                    layout="@layout/setting_item" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/helpdesk_support"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoLink="phone"
+                android:fontFamily="@font/roboto_medium"
+                android:linksClickable="true"
+                android:text="@string/_022_69646511"
+                android:textColor="@color/light_blue"
+                android:textColorLink="@color/light_blue"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/_24_7_all_days"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

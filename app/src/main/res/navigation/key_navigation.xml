@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/key_navigation"
+    app:startDestination="@id/splashKeyFragment">
+
+    <fragment
+        android:id="@+id/splashKeyFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.SplashKeyFragment"
+        android:label="fragment_splash_key"
+        tools:layout="@layout/fragment_splash_key" >
+        <action
+            android:id="@+id/action_splashKeyFragment_to_addCustomerStep1Fragment"
+            app:destination="@id/addCustomerStep1Fragment" />
+        <action
+            android:id="@+id/action_splashKeyFragment_to_udharFragment"
+            app:destination="@id/udharFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCustomerStep1Fragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.AddCustomerStep1Fragment"
+        android:label="fragment_add_customer_step1"
+        tools:layout="@layout/fragment_add_customer_step1" >
+        <action
+            android:id="@+id/action_addCustomerStep1Fragment_to_addCustomer2Fragment"
+            app:destination="@id/addCustomer2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCustomer2Fragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.AddCustomer2Fragment"
+        android:label="fragment_add_customer2"
+        tools:layout="@layout/fragment_add_customer2" >
+        <action
+            android:id="@+id/action_addCustomer2Fragment_to_addCustomer3Fragment"
+            app:destination="@id/addCustomer3Fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addCustomer3Fragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.AddCustomer3Fragment"
+        android:label="fragment_add_customer3"
+        tools:layout="@layout/fragment_add_customer3" >
+        <action
+            android:id="@+id/action_addCustomer3Fragment_to_addPhotoDocFragment"
+            app:destination="@id/addPhotoDocFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPhotoDocFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.AddPhotoDocFragment"
+        android:label="fragment_add_photo_doc"
+        tools:layout="@layout/fragment_add_photo_doc" >
+        <action
+            android:id="@+id/action_addPhotoDocFragment_to_registeredFragment"
+            app:destination="@id/registeredFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registeredFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.RegisteredFragment"
+        android:label="fragment_registered"
+        tools:layout="@layout/fragment_registered" />
+    <fragment
+        android:id="@+id/udharFragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.UdharFragment"
+        android:label="fragment_udhar"
+        tools:layout="@layout/fragment_udhar" >
+        <action
+            android:id="@+id/action_udharFragment_to_udaar2Fragment"
+            app:destination="@id/udaar2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/udaar2Fragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.Udaar2Fragment"
+        android:label="fragment_udaar2"
+        tools:layout="@layout/fragment_udaar2" >
+        <action
+            android:id="@+id/action_udaar2Fragment_to_udhar3Fragment"
+            app:destination="@id/udhar3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/udhar3Fragment"
+        android:name="com.martvalley.suvidha_u.dashboard.retailerModule.key.fragments.Udhar3Fragment"
+        android:label="fragment_udhar3"
+        tools:layout="@layout/fragment_udhar3" />
+</navigation>

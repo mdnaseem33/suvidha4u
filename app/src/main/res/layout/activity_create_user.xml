@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <!--<ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/logo_user" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/app_name"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_18sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Register User"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:autoLink="phone"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:linksClickable="true"
+                    android:text="Any issue in installation process contact 24 x 7 on 022-69646511"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/blue"
+                    android:textSize="@dimen/_12sdp" />
+    -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="USER"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/cust_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/rect_bg"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Enter Customer Name"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/create_user_grey"
+                    android:textSize="@dimen/_11sdp" />
+
+
+                <EditText
+                    android:id="@+id/cust_no_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rect_bg"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Enter Phone Number"
+                    android:inputType="phone"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/create_user_grey"
+                    android:textSize="@dimen/_11sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <EditText
+                        android:id="@+id/imeiNumberTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toStartOf="@+id/scannerBtn"
+                        android:background="@drawable/rect_bg"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:hint="IMEI Number"
+                        android:inputType="textCapCharacters"
+                        android:padding="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/create_user_grey"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <ImageView
+                        android:id="@+id/scannerBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/camera_scanner"/>
+
+
+
+                </RelativeLayout>
+
+
+
+                <EditText
+                    android:id="@+id/emi_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rect_bg"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Monthly EMI Amount (INR)"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/create_user_grey"
+                    android:textSize="@dimen/_11sdp" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rect_bg"
+                    android:paddingRight="0dp"
+                    android:prompt="@string/spinner_title" />
+
+                <EditText
+                    android:id="@+id/first_installment_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rect_bg"
+                    android:editable="false"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="First Installment Date"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/create_user_grey"
+                    android:textSize="@dimen/_11sdp" />
+
+                <EditText
+                    android:id="@+id/loan_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rect_bg"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Enter Loan ID/Bill No."
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/create_user_grey"
+                    android:textSize="@dimen/_11sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_medium"
+                                android:paddingStart="@dimen/_5sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingEnd="@dimen/_2sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:text="Upload Image"
+                                android:textColor="@color/create_user_grey"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="(optional)"
+                                android:textColor="@color/create_user_grey"
+                                android:textSize="@dimen/_8sdp" />
+
+
+                            <FrameLayout
+                                android:id="@+id/down_arrow"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:background="#d1d1d1">
+
+                                <ImageView
+                                    android:id="@+id/arrow_img"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/baseline_keyboard_arrow_down_24"
+                                    android:tag="down" />
+                            </FrameLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/customer_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="CUSTOMER IMAGE"
+                                app:backgroundTint="@color/blue"
+                                app:cornerRadius="@dimen/_10sdp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/aadhar_front_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="AADHAR FRONT IMAGE"
+                                app:backgroundTint="@color/blue"
+                                app:cornerRadius="@dimen/_10sdp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/aadhar_back_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="AADHAR BACK IMAGE"
+                                app:backgroundTint="@color/blue"
+                                app:cornerRadius="@dimen/_10sdp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--            <TextView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="@dimen/_20sdp"-->
+                <!--                android:fontFamily="@font/roboto_medium"-->
+                <!--                android:text="RETAILER"-->
+                <!--                android:textColor="@color/blue"-->
+                <!--                android:textSize="@dimen/_12sdp" />-->
+
+                <!--            <EditText-->
+                <!--                android:id="@+id/retailer_id"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="@dimen/_5sdp"-->
+                <!--                android:background="@drawable/rect_bg"-->
+                <!--                android:drawableEnd="@drawable/outline_fullscreen_24"-->
+                <!--                android:editable="true"-->
+                <!--                android:fontFamily="@font/roboto_regular"-->
+                <!--                android:hint="Enter Retailer Id"-->
+                <!--                android:padding="@dimen/_5sdp"-->
+                <!--                android:textColor="@color/blue"-->
+                <!--                android:textColorHint="@color/grey"-->
+                <!--                android:textSize="@dimen/_11sdp" />-->
+
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="Please sign here or enter to continue" />
+
+                <ImageView
+                    android:id="@+id/sign_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:background="@drawable/rect_bg"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="visible" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/reg_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="REGISTER USER"
+                    app:backgroundTint="@color/blue" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/blue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
