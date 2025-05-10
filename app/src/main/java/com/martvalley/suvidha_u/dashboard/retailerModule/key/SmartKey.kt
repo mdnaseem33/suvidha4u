@@ -51,6 +51,7 @@ import com.martvalley.suvidha_u.dashboard.retailerModule.key.model.RequestSmartK
 import com.martvalley.suvidha_u.dashboard.retailerModule.key.model.SmartKeyModel
 import com.martvalley.suvidha_u.databinding.ActivitySmartKeyBinding
 import com.martvalley.suvidha_u.utils.hide
+import com.martvalley.suvidha_u.utils.isValidIMEI
 import com.martvalley.suvidha_u.utils.logd
 import com.martvalley.suvidha_u.utils.toBase64StringBitmap
 import com.martvalley.suvidha_u.utils.withNetwork
@@ -102,20 +103,15 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
         viewModel = ViewModelProvider(this).get(SmartKeyModel::class.java)
         binding.splashKeyScreen.visibility = android.view.View.VISIBLE
         binding.mainView.visibility = android.view.View.GONE
-        showNextStep(0);
         withNetwork { getCreateData() }
         binding.nextButton.setOnClickListener {
-            showNextStep(step + 1)
+            showNextStep()
         }
         //binding.keyDes.text = intent.getStringExtra("sub_title")
         binding.backTextView.text = "Add  ${intent.getStringExtra("title")}";
         binding.keyNameTitle.text = intent.getStringExtra("title")
         binding.signLayout.visibility = View.GONE
-        binding.skipButton.setOnClickListener {
-            if(step > 0){
-                showNextStep(step - 1)
-            }
-        }
+
 
         binding.scanButton.setOnClickListener{
             // Start MainFragment
@@ -128,6 +124,16 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
 
         binding.clearSign.setOnClickListener{
             binding.signaturePad.clear()
+        }
+
+        binding.Referencecheckbox.setOnCheckedChangeListener { comp, bool ->
+            if (bool) {
+                binding.referenceNameEditText.visibility = View.VISIBLE
+                binding.referenceMobileEditText.visibility = View.VISIBLE
+            } else {
+                binding.referenceNameEditText.visibility = View.GONE
+                binding.referenceMobileEditText.visibility = View.GONE
+            }
         }
 
 
@@ -480,7 +486,7 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
     private fun getCreateData(){
         var is_appliance = 'N'
         var is_mobile = 'Y'
-        if(intent.getStringExtra("title") == "Home Appliance"){
+        if(intent.getStringExtra("title") == getString(R.string.home_appliance)){
             is_appliance = 'Y'
             is_mobile = 'N'
         }
@@ -534,33 +540,10 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
 
         return "";
     }
-    private fun showNextStep(currentStep: Int) {
-        if(currentStep < 2){
-            step = currentStep
-        }
+    private fun showNextStep() {
+
         showLoading()
-        when (currentStep) {
-            0 -> {
-                binding.keyStep1.visibility = android.view.View.VISIBLE
-                binding.keyStep4.visibility = android.view.View.GONE
-                binding.skipButton.visibility = android.view.View.INVISIBLE
-                binding.nextButton.text = "Next"
-                hideLoading()
-            }
-            1 -> {
-                binding.keyStep1.visibility = android.view.View.GONE
-                binding.keyStep4.visibility = android.view.View.VISIBLE
-                binding.skipButton.visibility = View.VISIBLE
-                binding.nextButton.text = "Register"
-                hideLoading()
-            }
-            2 -> {
-                if(isLoading){
-                    return
-                }
-                validate()
-            }
-        }
+        validate()
     }
 
     private fun showLoading(){
@@ -585,6 +568,10 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
         }
         if(binding.imeiEditText.text.toString().isEmpty()){
             Toast.makeText(this, "Please enter IMEI number", Toast.LENGTH_SHORT).show()
+            hideLoading()
+            return
+        }else if(isValidIMEI(binding.imeiEditText.text.toString())){
+            Toast.makeText(this, "Please enter valid IMEI number", Toast.LENGTH_SHORT).show()
             hideLoading()
             return
         }
@@ -676,8 +663,8 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
             binding.priceEditText.text.toString().toInt(),
             viewModel.reference_id_back,
             viewModel.reference_id_front,
-            " ",
-            " ",
+            binding.referenceNameEditText.text.toString(),
+            binding.referenceMobileEditText.text.toString(),
             getSignature(),
             selectedNumberOfInstallment,
             "Mobile",
@@ -687,7 +674,7 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
 
         if(intent.getStringExtra("title") == "Smart Key"){
             withNetwork { createSmartKey(request) }
-        }else if(intent.getStringExtra("title") == "Home Appliance"){
+        }else if(intent.getStringExtra("title") == getString(R.string.home_appliance)){
             withNetwork { createHomeKey(request) }
         }else{
             withNetwork { createSuperKey(request) }

@@ -116,7 +116,7 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
 //        binding.keyDes.text = intent.getStringExtra("sub_title")
 //        binding.keyName.text = intent.getStringExtra("title")
         binding.keyNameTitle.text = intent.getStringExtra("title")
-        if(intent.getStringExtra("title") == "Home Appliance"){
+        if(intent.getStringExtra("title") == getString(R.string.home_appliance)){
             binding.applianceType.visibility = View.VISIBLE
             binding.serialNumberEdit.visibility = View.VISIBLE
         }else{
@@ -510,7 +510,7 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
     private fun getCreateData(){
         var is_appliance = 'N'
         var is_mobile = 'Y'
-        if(intent.getStringExtra("title") == "Home Appliance"){
+        if(intent.getStringExtra("title") == getString(R.string.home_appliance)){
             is_appliance = 'Y'
             is_mobile = 'N'
         }

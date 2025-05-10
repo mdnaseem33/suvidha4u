@@ -53,10 +53,10 @@ class UserAdapter(
                                 intent.putExtra("title", "Smart Key")
                                 intent.putExtra("sub_title", "Mobile FRP Protection")
                             }else if(data.key_type ==2){
-                                intent.putExtra("title", "Super Key")
+                                intent.putExtra("title", context.getString(R.string.superkey))
                                 intent.putExtra("sub_title", "Zero Touch Enrollment")
                             }else if(data.key_type ==3){
-                                intent.putExtra("title", "Home Appliance")
+                                intent.putExtra("title", context.getString(R.string.home_appliance))
                                 intent.putExtra("sub_title", "Install without reset device")
                             }else{
                                 return@setOnMenuItemClickListener true
@@ -98,13 +98,13 @@ class UserAdapter(
                     key_type = "Smart Key"
                 }
                 2 -> {
-                    key_type = "Super Key"
+                    key_type = context.getString(R.string.superkey)
                 }
                 3 -> {
-                    key_type = "Home Appliance"
+                    key_type = context.getString(R.string.home_appliance)
                 }
                 4 -> {
-                    key_type = "Udhar"
+                    key_type = context.getString(R.string.udhar)
                 }
                 5-> {
                     key_type = "Anti Theft"

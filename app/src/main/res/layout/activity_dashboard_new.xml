@@ -32,16 +32,19 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
+
             <TextView
                 android:id="@+id/userNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
+                android:gravity="start"
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toTopOf="@+id/staticText1"
+                app:layout_constraintEnd_toStartOf="@id/notification"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageViewProfile" />
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/staticText1"

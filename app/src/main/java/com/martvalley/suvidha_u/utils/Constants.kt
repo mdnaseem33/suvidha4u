@@ -6,7 +6,7 @@ object Constants {
     const val BASIC = "basic"
     const val APPLICATION = "application"
     const val ADVANCE = "advance"
-    const val BASEURL = "https://login.emitrackon.in/"
+    const val BASEURL = "https://login.suvidha4u.com/"
      //const val BASEURL =   "http://192.168.1.67:8000/" //"https://1.404guys.com/emitrackon/public/"
     const val ROLE = "ROLE"  // 3 for retailer and 2 for distributor
     const val SUB_ROLE = "SUB_ROLE"  // 1 => SUPER DISTRIBUTOR 2 => DISTRIBUTOR 3 => SUB DISTRIBUTOR

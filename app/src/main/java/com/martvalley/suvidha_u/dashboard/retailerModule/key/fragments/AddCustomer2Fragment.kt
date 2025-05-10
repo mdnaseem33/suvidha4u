@@ -38,7 +38,7 @@ class AddCustomer2Fragment : Fragment() {
         val type = activity?.intent?.getStringExtra("Value_Key")
         binding.keyName.text = type
         if (type != null) {
-            if (type.contains("Home Appliance")){
+            if (type.contains(requireContext().getString(R.string.home_appliance))){
                 binding.mobileBrandEditText.setHint(R.string.brand)
                 binding.serialNumberEdit.visibility = View.VISIBLE
             }

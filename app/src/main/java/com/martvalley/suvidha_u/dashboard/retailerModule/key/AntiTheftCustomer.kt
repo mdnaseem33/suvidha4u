@@ -504,7 +504,7 @@ class AntiTheftCustomer : AppCompatActivity(), OnBarcodeScannedListener, onImage
     private fun getCreateData(){
         var is_appliance = 'N'
         var is_mobile = 'Y'
-        if(intent.getStringExtra("title") == "Home Appliance"){
+        if(intent.getStringExtra("title") == getString(R.string.home_appliance)){
             is_appliance = 'Y'
             is_mobile = 'N'
         }

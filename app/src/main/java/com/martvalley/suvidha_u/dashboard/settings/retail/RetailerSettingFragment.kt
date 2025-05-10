@@ -48,7 +48,7 @@ class RetailerSettingFragment : Fragment() {
         binding.logout.img.setImageResource(R.drawable.logout)
         binding.support.img.setImageResource(R.drawable.live_support_img)
         binding.loanPrefix.img.setImageResource(R.drawable.baseline_assured_workload_24)
-        binding.frp.img.setImageResource(R.drawable.baseline_alternate_email_24)
+        //binding.frp.img.setImageResource(R.drawable.baseline_alternate_email_24)
         binding.switcher.img.setImageResource(R.drawable.baseline_swap_horiz_24)
         binding.changeLock.img.setImageResource(R.drawable.baseline_fingerprint_24)
         binding.switcher.root.visibility = View.GONE
@@ -58,7 +58,7 @@ class RetailerSettingFragment : Fragment() {
         binding.profile.tv.text = "Edit Profile"
         binding.logout.tv.text = "Logout"
         binding.support.tv.text = "Live Support!"
-        binding.frp.tv.text = "Custom FRP Email"
+        //binding.frp.tv.text = "Custom FRP Email"
         binding.qrCode.tv.text = "Payment QR"
         binding.loanPrefix.tv.text = "Loan Prefix"
         binding.changeLock.tv.text = "Change Lock"
@@ -114,16 +114,16 @@ class RetailerSettingFragment : Fragment() {
 
     private fun typeUI(){
         if(SharedPref(requireContext()).getValueInt(Constants.SUB_ROLE) == 2 || SharedPref(requireContext()).getValueInt(Constants.IS_RETAILER) == 2){
-            binding.frp.root.visibility = View.GONE
+            //binding.frp.root.visibility = View.GONE
             binding.loanPrefix.root.visibility = View.GONE
             binding.wallpaper.root.visibility = View.GONE
             binding.wallpaper.root.visibility = View.GONE
             binding.report.plusMember.visibility = View.GONE
 
         }else{
-            binding.frp.root.setOnClickListener {
-                startActivity(Intent(requireContext(), FrpEmailActivity::class.java))
-            }
+//            binding.frp.root.setOnClickListener {
+//                startActivity(Intent(requireContext(), FrpEmailActivity::class.java))
+//            }
             binding.loanPrefix.root.setOnClickListener {
                 startActivity(Intent(requireContext(), LoanPrefixActivity::class.java))
             }

@@ -54,11 +54,10 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/home_topbar_layout"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_buttons"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view1">
             <LinearLayout
                 android:orientation="vertical"
@@ -211,25 +210,6 @@
                             android:paddingHorizontal="10dp"
                             android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/loanAmounttEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="Emi Amount"
-                            android:inputType="number"
-                            android:maxLines="1"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/totalEmi"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Total Loan Amount: ₹0.00"
-                            />
                         <LinearLayout
                             android:id="@+id/emiSection"
                             android:orientation="vertical"
@@ -267,6 +247,24 @@
                                 android:drawableStart="@drawable/retry_black"
                                 android:layout_marginTop="10dp" />
 
+                            <EditText
+                                android:id="@+id/loanAmounttEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="15dp"
+                                android:autofillHints="Name"
+                                android:background="@drawable/text_key_radius_grey"
+                                android:hint="Emi Amount"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingHorizontal="10dp"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/totalEmi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total Loan Amount: ₹0.00"
+                                />
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -397,7 +395,50 @@
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
+                    <CheckBox
+                        android:id="@+id/Referencecheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:buttonTint="@color/blue"
+                        android:text="@string/add_reference_name"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/referenceNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:autofillHints="Name"
+                        android:background="@drawable/text_key_radius_grey"
+                        android:hint="@string/reference_name"
+                        android:inputType="textCapWords"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingHorizontal="10dp"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/referenceMobileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:autofillHints="Name"
+                        android:background="@drawable/text_key_radius_grey"
+                        android:hint="@string/reference_mobile_no"
+                        android:inputType="textCapWords"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:textSize="14sp" />
                     <androidx.constraintlayout.widget.ConstraintLayout
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -441,43 +482,22 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/nextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:layout_marginBottom="70dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/scan_blue_background_dark"
+                        android:text="Submit"
+                        android:textColor="@color/white"/>
+
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:id="@+id/bottom_buttons"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/skipButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/scan_blue_background"
-                android:text="Back"
-                android:textColor="@color/purple_700"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/scan_blue_background_dark"
-                android:text="Next"
-                android:textColor="@color/white"/>
-
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -49,6 +49,23 @@ fun Bitmap.bitmapToBase64(): String {
     return ("data:image/png;base64,$media")
 }
 
+fun isValidIMEI(imei: String): Boolean {
+    if (!imei.matches(Regex("\\d{15}"))) return false
+
+    var sum = 0
+    for (i in 0 until 14) {
+        var digit = Character.getNumericValue(imei[i])
+        if (i % 2 == 1) { // double every second digit (index 1, 3, 5...)
+            digit *= 2
+            if (digit > 9) digit -= 9
+        }
+        sum += digit
+    }
+    val checkDigit = (10 - (sum % 10)) % 10
+    return checkDigit == Character.getNumericValue(imei[14])
+}
+
+
 fun Context.compressImageFromUriAndGetBase64( imageUri: Uri, callback: (String?) -> Unit) {
     Glide.with(this)
         .asBitmap()

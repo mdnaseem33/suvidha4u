@@ -34,6 +34,7 @@ import com.martvalley.suvidha_u.utils.SharedPref
 import com.martvalley.suvidha_u.utils.hide
 import com.martvalley.suvidha_u.utils.show
 import com.martvalley.suvidha_u.utils.showApiErrorToast
+import com.martvalley.suvidha_u.utils.showToast
 import com.martvalley.suvidha_u.utils.withNetwork
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,11 +64,12 @@ class HomeFragment : Fragment() {
 
         withNetwork { callDashboardApi() }
         typeUI()
-        keyLayout.smartKeyCard.setOnClickListener {
-            val intent = Intent(requireContext(), SmartKey::class.java)
-            intent.putExtra("title", "Smart Key")
-            intent.putExtra("sub_title", "Mobile FRP Protection")
-            startActivity(intent)
+        keyLayout.iphoneKeyCard.setOnClickListener {
+            showToast("Coming Soon")
+//            val intent = Intent(requireContext(), SmartKey::class.java)
+//            intent.putExtra("title", "Smart Key")
+//            intent.putExtra("sub_title", "Mobile FRP Protection")
+//            startActivity(intent)
         }
 
         keyLayout.antiTheft.setOnClickListener {
@@ -79,21 +81,21 @@ class HomeFragment : Fragment() {
 
         keyLayout.superKeyCard.setOnClickListener {
             val intent = Intent(requireContext(), SmartKey::class.java)
-            intent.putExtra("title", "Super Key")
+            intent.putExtra("title", requireContext().getString(R.string.superkey))
             intent.putExtra("sub_title", "Zero Touch Enrollment")
             startActivity(intent)
         }
 
         keyLayout.homeAppCard.setOnClickListener {
             val intent = Intent(requireContext(), SmartKey::class.java)
-            intent.putExtra("title", "Home Appliance")
+            intent.putExtra("title", requireContext().getString(R.string.home_appliance))
             intent.putExtra("sub_title", "Install without reset device")
             startActivity(intent)
         }
 
         keyLayout.udharCard.setOnClickListener {
             val intent = Intent(requireContext(), KeyMainActivity::class.java)
-            intent.putExtra("Value_Key", "Udhar")
+            intent.putExtra("Value_Key", requireContext().getString(R.string.udhar))
             startActivity(intent)
         }
 

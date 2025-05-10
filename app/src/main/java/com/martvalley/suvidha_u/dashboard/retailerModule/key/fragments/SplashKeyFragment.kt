@@ -28,7 +28,7 @@ class SplashKeyFragment : Fragment() {
 
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
             if (type != null) {
-                if (type.contains("Udhar")){
+                if (type.contains(requireContext().getString(R.string.udhar))){
                     findNavController().navigate(R.id.action_splashKeyFragment_to_udharFragment)
                 } else {
                     findNavController().navigate(R.id.action_splashKeyFragment_to_addCustomerStep1Fragment)

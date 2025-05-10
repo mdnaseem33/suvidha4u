@@ -14,44 +14,9 @@
         android:padding="5dp"
         android:weightSum="4">
 
-
-        <RelativeLayout
-            android:layout_weight="1"
-            android:id="@+id/smartKeyCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageViewKey"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/person_phone_touch"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
-
-
-            <TextView
-                android:id="@+id/nameKey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imageViewKey"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/smartkey"
-                android:textColor="@color/white"
-                android:textSize="10sp" />
-
-        </RelativeLayout>
-
-
         <RelativeLayout
             android:id="@+id/superKeyCard"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_weight="1"
@@ -83,8 +48,39 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/iphoneKeyCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewKey"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/person_phone_touch"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+            <TextView
+                android:id="@+id/nameKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageViewKey"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/smartkey"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/homeAppCard"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_weight="1"
@@ -116,7 +112,7 @@
 
         <RelativeLayout
             android:id="@+id/udharCard"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_weight="1"

@@ -51,9 +51,9 @@
                 <include
                     android:id="@+id/profile"
                     layout="@layout/setting_item" />
-                <include
-                    android:id="@+id/frp"
-                    layout="@layout/setting_item" />
+<!--                <include-->
+<!--                    android:id="@+id/frp"-->
+<!--                    layout="@layout/setting_item" />-->
 
                 <include
                     android:id="@+id/qrCode"

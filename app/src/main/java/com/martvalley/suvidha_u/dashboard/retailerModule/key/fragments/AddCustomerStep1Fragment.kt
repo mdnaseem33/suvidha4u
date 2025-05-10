@@ -68,13 +68,13 @@ class AddCustomerStep1Fragment : Fragment(), ImageAnalysis.Analyzer {
             "Smart Key" -> {
                 binding.keyDes.text = "Mobile FRP Protection"
             }
-            "Super Key" -> {
+            requireContext().getString(R.string.superkey) -> {
                 binding.keyDes.text = "Zero Touch Enrollment"
             }
-            "Home Appliance" -> {
+            requireContext().getString(R.string.home_appliance) -> {
                 binding.keyDes.text = "Install without reset device"
             }
-            "Udhar" ->{
+            requireContext().getString(R.string.udhar) ->{
                 binding.keyDes.text = ""
             }
         }

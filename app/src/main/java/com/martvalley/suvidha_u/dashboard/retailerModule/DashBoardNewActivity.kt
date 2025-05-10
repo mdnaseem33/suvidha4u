@@ -114,11 +114,12 @@ class DashBoardNewActivity : AppCompatActivity(), NotificationCountListener {
             val binding = SmartkeyLayoutBinding.inflate(layoutInflater)
             dialog.setContentView(binding.root)
 
-            binding.smartKeyCard.setOnClickListener {
-                val intent = Intent(this, SmartKey::class.java)
-                intent.putExtra("title", "Smart Key")
-                intent.putExtra("sub_title", "Mobile FRP Protection")
-                startActivity(intent)
+            binding.iphoneKeyCard.setOnClickListener {
+                    showToast("coming soon")
+//                val intent = Intent(this, SmartKey::class.java)
+//                intent.putExtra("title", "Smart Key")
+//                intent.putExtra("sub_title", "Mobile FRP Protection")
+//                startActivity(intent)
             }
 
             binding.antiTheft.setOnClickListener {
@@ -130,21 +131,21 @@ class DashBoardNewActivity : AppCompatActivity(), NotificationCountListener {
 
             binding.superKeyCard.setOnClickListener {
                 val intent = Intent(this, SmartKey::class.java)
-                intent.putExtra("title", "Super Key")
+                intent.putExtra("title", getString(R.string.superkey))
                 intent.putExtra("sub_title", "Zero Touch Enrollment")
                 startActivity(intent)
             }
 
             binding.homeAppCard.setOnClickListener {
                 val intent = Intent(this, SmartKey::class.java)
-                intent.putExtra("title", "Home Appliance")
+                intent.putExtra("title", getString(R.string.home_appliance))
                 intent.putExtra("sub_title", "Install without reset device")
                 startActivity(intent)
             }
 
             binding.udharCard.setOnClickListener {
                 val intent = Intent(this, KeyMainActivity::class.java)
-                intent.putExtra("Value_Key", "Udhar")
+                intent.putExtra("Value_Key", getString(R.string.udhar))
                 startActivity(intent)
             }
 

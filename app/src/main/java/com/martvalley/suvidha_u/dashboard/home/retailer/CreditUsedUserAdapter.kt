@@ -48,13 +48,13 @@ class CreditUsedUserAdapter(
                     key_type = "Smart Key"
                 }
                 2 -> {
-                    key_type = "Super Key"
+                    key_type = context.getString(R.string.superkey)
                 }
                 3 -> {
-                    key_type = "Home Appliance"
+                    key_type = context.getString(R.string.home_appliance)
                 }
                 4 -> {
-                    key_type = "Udhar"
+                    key_type = context.getString(R.string.udhar)
                 }
             }
             binding.keyType.text = key_type;
