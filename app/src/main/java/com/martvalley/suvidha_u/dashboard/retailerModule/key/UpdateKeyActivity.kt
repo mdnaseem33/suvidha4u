@@ -107,27 +107,15 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
         viewModel = ViewModelProvider(this).get(SmartKeyModel::class.java)
         binding.splashKeyScreen.visibility = android.view.View.VISIBLE
         binding.mainView.visibility = android.view.View.GONE
-        showNextStep(0);
         withNetwork { getCreateData() }
         binding.nextButton.setOnClickListener {
-            showNextStep(step + 1)
+            showNextStep()
         }
         binding.backTextView.text = "Update  ${intent.getStringExtra("title")}";
 //        binding.keyDes.text = intent.getStringExtra("sub_title")
 //        binding.keyName.text = intent.getStringExtra("title")
         binding.keyNameTitle.text = intent.getStringExtra("title")
-        if(intent.getStringExtra("title") == getString(R.string.home_appliance)){
-            binding.applianceType.visibility = View.VISIBLE
-            binding.serialNumberEdit.visibility = View.VISIBLE
-        }else{
-            binding.applianceType.visibility = View.GONE
-            binding.serialNumberEdit.visibility = View.GONE
-        }
-        binding.skipButton.setOnClickListener {
-            if(step > 0){
-                showNextStep(step - 1)
-            }
-        }
+
 
         binding.scanButton.setOnClickListener{
             // Start MainFragment
@@ -166,14 +154,6 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
             finish()
         }
 
-        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            if (checkedId == R.id.radioColletEmi) {
-                binding.emiSection.visibility = View.VISIBLE
-            } else {
-                binding.emiSection.visibility = View.GONE
-            }
-        }
-
         setUpSpinners();
         binding.datepicker.setOnClickListener {
             openDatePicker()
@@ -187,26 +167,19 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
             viewModel.selected_image_id = "idFrontText"
             showChooseImageSourceDialog()
         }
-        binding.productText.setOnClickListener {
-            viewModel.selected_image_id = "productImage"
-            showChooseImageSourceDialog()
-        }
 
         binding.idbackText.setOnClickListener {
             viewModel.selected_image_id = "idbackText"
             showChooseImageSourceDialog()
         }
-        binding.refFrontText.setOnClickListener {
-            viewModel.selected_image_id = "refFrontText"
-            showChooseImageSourceDialog()
-        }
-        binding.refIdBackText.setOnClickListener {
-            viewModel.selected_image_id = "refIdBackText"
-            showChooseImageSourceDialog()
-        }
+
 
         binding.signText.setOnClickListener {
-            showNextStep(0)
+            binding.signLayout.visibility = View.VISIBLE
+        }
+
+        binding.confirmSignBtn.setOnClickListener {
+            binding.signLayout.visibility = View.GONE
         }
         binding.loanAmounttEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -221,19 +194,21 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
             }
 
         })
+
+
         binding.signaturePad.setOnSignedListener(object : SignaturePad.OnSignedListener {
             override fun onStartSigning() {
                 // Event triggered when the pad is touched
             }
 
             override fun onSigned() {
-                binding.signText.text = "Updated"
+                //binding.signText.text = "Updated"
                 binding.signChecked.setImageResource(R.drawable.checked_green)
                 signatureImage= true
             }
 
             override fun onClear() {
-                binding.signText.text = "Add"
+                //binding.signText.text = "Add"
                 binding.signChecked.setImageResource(R.drawable.checked_grey)
                 signatureImage= false
             }
@@ -319,15 +294,6 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
                         viewModel.customer_id_front = ("data:image/png;base64,$media")
                         binding.idChecked.setImageResource(R.drawable.checked_green)
                         binding.idFrontText.text = "Update"
-                    }
-                }
-            }
-            "productImage" -> {
-                selectedImageUri?.let { uri ->
-                    compressImageFromUriAndGetBase64(uri){ media->
-                        viewModel.product_photo = ("data:image/png;base64,$media")
-                        binding.productChecked.setImageResource(R.drawable.checked_green)
-                        binding.productText.text = "Update"
                     }
                 }
             }
@@ -531,10 +497,6 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
                     binding.custNameEditText.setText(customer.name)
                     binding.imeiEditText.setText(customer.imei1)
                     binding.mobileEditText.setText(customer.phone)
-                    binding.loanNumEditText.setText(customer.bill_no)
-                    binding.applianceType.setText(customer.application_type)
-                    binding.modelNoEditText.setText(customer.model)
-                    binding.serialNumberEdit.setText(customer.application_serial_no)
                     binding.referenceNameEditText.setText(customer.reference_name)
                     binding.referenceMobileEditText.setText(customer.reference_number)
                     binding.priceEditText.setText(customer.product_price.toString())
@@ -546,8 +508,10 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
                     binding.numberOfInstallmentsBtn.isEnabled = false
                     binding.datepicker.text = customer.first_intallment_date
                     binding.datepicker.isEnabled = false
-                    if(customer.image.length > 2){
-                        binding.photoText.loadImage(Constants.BASEURL+"storage/"+customer.image)
+                    customer.image?.length?.let {
+                        if(it > 2){
+                            binding.photoText.loadImage(Constants.BASEURL+"storage/"+customer.image)
+                        }
                     }
 
 
@@ -604,37 +568,9 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
 
         return "";
     }
-    private fun showNextStep(currentStep: Int) {
-        if(currentStep < 2){
-            step = currentStep
-        }
+    private fun showNextStep() {
         showLoading()
-        when (currentStep) {
-            0 -> {
-                binding.keyStep1.visibility = android.view.View.VISIBLE
-                //binding.keyStep2.visibility = android.view.View.GONE
-                binding.keyStep3.visibility = android.view.View.GONE
-                binding.keyStep4.visibility = android.view.View.GONE
-                binding.skipButton.visibility = android.view.View.INVISIBLE
-                binding.nextButton.text = "Next"
-                hideLoading()
-            }
-            1 -> {
-                binding.keyStep1.visibility = android.view.View.GONE
-                //binding.keyStep2.visibility = android.view.View.VISIBLE
-                binding.keyStep3.visibility = android.view.View.VISIBLE
-                binding.keyStep4.visibility = android.view.View.VISIBLE
-                binding.skipButton.visibility = View.VISIBLE
-                binding.nextButton.text = "Register"
-                hideLoading()
-            }
-            2 -> {
-                if(isLoading){
-                    return
-                }
-                validate()
-            }
-        }
+        validate()
     }
 
     private fun showLoading(){
@@ -677,7 +613,7 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
         }
         if(!signatureImage){
             Toast.makeText(this, "Signature is Required", Toast.LENGTH_SHORT).show()
-            showNextStep(0)
+            binding.signLayout.visibility = View.VISIBLE
             hideLoading()
             return
         }
@@ -692,9 +628,9 @@ class UpdateKeyActivity : AppCompatActivity() , onImageCaptureListener {
             customer_id_front = viewModel.customer_id_front,
             down_payment = binding.downPaymentEditText.text.toString(),
             image = viewModel.customerImage,
-            loan_number = binding.loanNumEditText.text.toString(),
+            loan_number = "",
             mobile = binding.mobileEditText.text.toString(),
-            model_number = binding.modelNoEditText.text.toString(),
+            model_number = "",
             name = binding.custNameEditText.text.toString(),
             product_price = binding.priceEditText.text.toString(),
             reference_id_back = viewModel.reference_id_back,

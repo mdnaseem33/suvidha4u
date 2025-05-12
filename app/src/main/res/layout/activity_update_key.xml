@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".dashboard.retailerModule.key.UpdateKeyActivity">
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainView"
         android:visibility="visible"
@@ -56,10 +54,10 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_buttons"
+            android:background="@drawable/home_topbar_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view1">
             <LinearLayout
                 android:orientation="vertical"
@@ -70,8 +68,10 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView2"
                     android:layout_width="match_parent"
+                    android:background="@drawable/home_topbar_layout"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:elevation="12dp"
                     android:padding="20dp"
@@ -82,7 +82,8 @@
 
                     <LinearLayout
                         android:id="@+id/keyStep1"
-                        android:visibility="gone"
+                        android:visibility="visible"
+                        android:background="@drawable/home_topbar_layout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -100,8 +101,9 @@
                             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
                         <TextView
-                            android:text="Customer Image"
+                            android:text="Customer Image With Product Photo"
                             android:layout_gravity="center"
+                            android:textColor="@color/white"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
@@ -181,159 +183,19 @@
                         </LinearLayout>
 
                         <Spinner
-                            android:id="@+id/selectBank"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/scan_blue_background"
-                            android:drawableStart="@drawable/retry_black"
-                            android:layout_marginTop="10dp" />
-                        <Spinner
                             android:id="@+id/selectBrand"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/scan_blue_background"
                             android:drawableStart="@drawable/retry_black"
                             android:layout_marginTop="10dp" />
-                        <EditText
-                            android:id="@+id/modelNoEditText"
+                        <Spinner
+                            android:id="@+id/selectBank"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="Enter Model"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/checkbox"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="@string/please_sign_here_or_enter_to_continue"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                        <ImageView
-                            android:id="@+id/clearSign"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="end"
-                            android:contentDescription="@string/clear_sign"
-                            android:src="@drawable/refresh"
-                            app:tint="@color/purple_700" />
-
-                        <com.github.gcacace.signaturepad.views.SignaturePad
-                            android:id="@+id/signaturePad"
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@drawable/text_key_radius_grey"
-                            app:penColor="@color/black" />
-
-                        <CheckBox
-                            android:visibility="gone"
-                            android:id="@+id/Referencecheckbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="5dp"
-                            android:buttonTint="@color/blue"
-                            android:text="@string/add_reference_name"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
-
-                        <EditText
-                            android:id="@+id/referenceNameEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="@string/reference_name"
-                            android:inputType="textCapWords"
-                            android:maxLength="10"
-                            android:maxLines="1"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-
-                        <EditText
-                            android:id="@+id/referenceMobileEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="@string/reference_mobile_no"
-                            android:inputType="textCapWords"
-                            android:maxLength="10"
-                            android:maxLines="1"
-                            android:layout_marginBottom="10dp"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:visibility="gone"
-                        android:id="@+id/keyStep2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <EditText
-                            android:visibility="gone"
-                            android:id="@+id/loanNumEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="@string/loan_number"
-                            android:inputType="textCapCharacters"
-                            android:maxLines="1"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-                        <EditText
-                            android:visibility="gone"
-                            android:id="@+id/applianceType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="Appliance Type"
-                            android:inputType="textCapCharacters"
-                            android:maxLines="1"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-                        <EditText
-                            android:id="@+id/serialNumberEdit"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:visibility="gone"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="@string/serial_no"
-                            android:inputType="textCapCharacters"
-                            android:maxLength="10"
-                            android:maxLines="1"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:visibility="visible"
-                        android:id="@+id/keyStep3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-
+                            android:background="@drawable/scan_blue_background"
+                            android:drawableStart="@drawable/retry_black"
+                            android:layout_marginTop="10dp" />
                         <EditText
                             android:id="@+id/priceEditText"
                             android:layout_width="match_parent"
@@ -360,51 +222,7 @@
                             android:paddingHorizontal="10dp"
                             android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/loanAmounttEditText"
-                            android:layout_width="match_parent"
-                            android:enabled="false"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="15dp"
-                            android:autofillHints="Name"
-                            android:background="@drawable/text_key_radius_grey"
-                            android:hint="Emi Amount"
-                            android:inputType="number"
-                            android:maxLines="1"
-                            android:paddingHorizontal="10dp"
-                            android:textSize="14sp" />
 
-                        <RadioGroup
-                            android:visibility="gone"
-                            android:id="@+id/radioGroup"
-                            android:orientation="horizontal"
-                            android:weightSum="2"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/radioColletEmi"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="true"
-                                android:text="@string/collect_in_emi"
-                                android:textStyle="bold"/>
-                            <RadioButton
-                                android:id="@+id/oneTimeRadio"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/one_time_payment"
-                                android:textStyle="bold"/>
-                        </RadioGroup>
-                        <TextView
-                            android:id="@+id/totalEmi"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Total Loan Amount: ₹0.00"
-                            />
                         <LinearLayout
                             android:id="@+id/emiSection"
                             android:orientation="vertical"
@@ -444,23 +262,26 @@
                                 android:background="@drawable/scan_blue_background"
                                 android:drawableStart="@drawable/retry_black"
                                 android:layout_marginTop="10dp" />
+                            <EditText
+                                android:id="@+id/loanAmounttEditText"
+                                android:layout_width="match_parent"
+                                android:enabled="false"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="15dp"
+                                android:autofillHints="Name"
+                                android:background="@drawable/text_key_radius_grey"
+                                android:hint="Emi Amount"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingHorizontal="10dp"
+                                android:textSize="14sp" />
 
-                            <!--                            <EditText-->
-                            <!--                                android:id="@+id/numberOfInstallments"-->
-                            <!--                                android:layout_width="match_parent"-->
-                            <!--                                android:layout_height="50dp"-->
-                            <!--                                android:layout_marginTop="10dp"-->
-                            <!--                                android:background="@drawable/scan_blue_background"-->
-                            <!--                                android:drawableStart="@drawable/baseline_account_balance_wallet_24"-->
-                            <!--                                android:gravity="start|center"-->
-                            <!--                                android:paddingHorizontal="@dimen/_10sdp"-->
-                            <!--                                android:hint="@string/number_of_installments"-->
-                            <!--                                android:textColorHint="@color/purple_700"-->
-                            <!--                                android:drawablePadding="10dp"-->
-                            <!--                                android:inputType="number"-->
-                            <!--                                android:textColor="@color/purple_700"-->
-                            <!--                                android:drawableTint="@color/purple_700"/>-->
-
+                            <TextView
+                                android:id="@+id/totalEmi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total Loan Amount: ₹0.00"
+                                />
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -486,113 +307,15 @@
                                 android:drawableTint="@color/purple_700"/>
                         </LinearLayout>
 
-
                     </LinearLayout>
-
 
                 </androidx.cardview.widget.CardView>
                 <LinearLayout
+
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/keyStep4">
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/signCardView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="10dp"
-                        android:elevation="12dp"
-                        android:padding="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/photCardView">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="20dp">
-
-                            <ImageView
-                                android:id="@+id/signChecked"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@drawable/checked_grey" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_toEndOf="@+id/signChecked"
-                                android:text="@string/customer_signature"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-
-                            <TextView
-                                android:id="@+id/signText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/add"
-                                android:textColor="@color/purple_700"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/productCardView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="8dp"
-                        android:elevation="12dp"
-                        android:padding="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/referCardView">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="20dp">
-
-                            <ImageView
-                                android:id="@+id/productChecked"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@drawable/checked_grey" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_toEndOf="@+id/productChecked"
-                                android:text="Product Image"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-
-                            <TextView
-                                android:id="@+id/productText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/add"
-                                android:textColor="@color/purple_700"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/idCardView"
@@ -689,140 +412,168 @@
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
+                    <CheckBox
+                        android:id="@+id/Referencecheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:buttonTint="@color/blue"
+                        android:text="@string/add_reference_name"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/referCardView"
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/referenceNameEditText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
-                        android:elevation="12dp"
-                        android:padding="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/idBackCardView">
+                        android:autofillHints="Name"
+                        android:background="@drawable/text_key_radius_grey"
+                        android:hint="@string/reference_name"
+                        android:inputType="textCapWords"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingHorizontal="10dp"
+                        android:textSize="14sp" />
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="20dp">
-
-                            <ImageView
-                                android:id="@+id/referChecked"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@drawable/checked_grey" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_toEndOf="@+id/referChecked"
-                                android:text="@string/reference_id_front"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-
-                            <TextView
-                                android:id="@+id/refFrontText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/add"
-                                android:textColor="@color/purple_700"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/referBackCardView"
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/referenceMobileEditText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="8dp"
-                        android:elevation="12dp"
-                        android:padding="20dp"
-                        app:cardCornerRadius="10dp"
+                        android:autofillHints="Name"
+                        android:background="@drawable/text_key_radius_grey"
+                        android:hint="@string/reference_mobile_no"
+                        android:inputType="textCapWords"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:textSize="14sp" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/referCardView">
+                        app:layout_constraintTop_toBottomOf="@+id/photCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:padding="20dp">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="20dp">
+                        <ImageView
+                            android:id="@+id/signChecked"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/checked_grey"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/signText"/>
 
-                            <ImageView
-                                android:id="@+id/referBackChecked"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@drawable/checked_grey" />
+                        <TextView
+                            android:layout_marginTop="30dp"
+                            android:id="@+id/signText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginStart="20dp"
+                            android:textStyle="bold"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/customer_signature"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <ImageView
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/signText"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/signature_pen_document_text"/>
 
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="20dp"
-                                android:layout_toEndOf="@+id/referBackChecked"
-                                android:text="@string/reference_id_back"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-                            <TextView
-                                android:id="@+id/refIdBackText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="@string/add"
-                                android:textColor="@color/purple_700"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/nextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:layout_marginBottom="70dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/scan_blue_background_dark"
+                        android:text="Update"
+                        android:textColor="@color/white"/>
 
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-        <LinearLayout
-            android:layout_width="match_parent"
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signLayout"
+        android:visibility="gone"
+        android:background="@drawable/home_topbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:id="@+id/bottom_buttons"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="@string/please_sign_here_or_enter_to_continue"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:id="@+id/signaturePad"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/text_key_radius_grey"
+            app:layout_constraintTop_toBottomOf="@+id/confirmLayout"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:penColor="@color/black" />
+        <LinearLayout
+            android:id="@+id/confirmLayout"
+            app:layout_constraintTop_toBottomOf="@id/checkbox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/skipButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/scan_blue_background"
-                android:text="Back"
-                android:textColor="@color/purple_700"/>
+                android:id="@+id/confirmSignBtn"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@color/green"
+                android:textColor="@color/white"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="Confirm"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/scan_blue_background_dark"
-                android:text="Next"
-                android:textColor="@color/white"/>
-
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clearSign"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@color/white"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="Clear Sign"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -833,13 +584,14 @@
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/blue"
         android:layout_centerInParent="true" />
-    <!-- Transparent overlay -->
+
     <View
         android:id="@+id/overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
         android:visibility="gone" />
+
     <FrameLayout
         android:visibility="gone"
         android:id="@+id/splashKeyScreen"
