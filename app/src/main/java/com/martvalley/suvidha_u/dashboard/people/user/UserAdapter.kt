@@ -120,7 +120,6 @@ class UserAdapter(
             if(data.brand != null){
                 binding.brandImage.loadImage(Constants.BASEURL+ data.brand.image)
             }
-            data.brand.logd("brandLogo")
 
             if(data.bank != null){
                 binding.bankImage.loadImage(Constants.BASEURL+ data.bank.image)

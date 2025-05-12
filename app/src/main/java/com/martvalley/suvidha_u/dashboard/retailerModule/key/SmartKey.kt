@@ -191,6 +191,35 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
             }
 
         })
+
+        binding.priceEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                calculateEmiAmount()
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
+
+        binding.downPaymentEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                calculateEmiAmount()
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
+
         binding.signaturePad.setOnSignedListener(object : SignaturePad.OnSignedListener {
             override fun onStartSigning() {
                 // Event triggered when the pad is touched
@@ -233,6 +262,31 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
 
     @SuppressLint("MissingSuperCall")
     override fun onSaveInstanceState(outState: Bundle) {
+
+    }
+
+    private fun calculateEmiAmount(){
+        if(binding.priceEditText.text.toString() == "" || binding.priceEditText.text.toString() == "0"){
+            return
+        }
+
+        if(binding.downPaymentEditText.text.toString() == "" || binding.downPaymentEditText.text.toString() == "0"){
+            return
+        }
+        val productPrice = binding.priceEditText.text.toString().toInt()
+        val downPayment = binding.downPaymentEditText.text.toString().toInt()
+        if (productPrice == 0 || downPayment == 0){
+            return;
+        }
+        if(selectedNumberOfInstallment ==0){
+
+            return;
+        }
+        if (productPrice < downPayment){
+            return;
+        }
+        val LoanAmount = (productPrice - downPayment)/selectedNumberOfInstallment
+        binding.loanAmounttEditText.setText(LoanAmount.toString())
 
     }
 
@@ -374,6 +428,7 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, postion: Int, p3: Long) {
                 binding.numberOfInstallmentsBtn.setSelection(postion);
                 selectedNumberOfInstallment = postion
+                calculateEmiAmount()
                 calculateEmi()
             }
 
@@ -570,7 +625,7 @@ class SmartKey : AppCompatActivity(), OnBarcodeScannedListener, onImageCaptureLi
             Toast.makeText(this, "Please enter IMEI number", Toast.LENGTH_SHORT).show()
             hideLoading()
             return
-        }else if(isValidIMEI(binding.imeiEditText.text.toString())){
+        }else if(!isValidIMEI(binding.imeiEditText.text.toString())){
             Toast.makeText(this, "Please enter valid IMEI number", Toast.LENGTH_SHORT).show()
             hideLoading()
             return

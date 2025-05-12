@@ -99,49 +99,7 @@ class UserListFragment : Fragment() {
         binding.moreOption.setOnClickListener {
             showPopupMenu(binding.moreOption)
         }
-        adapter = UserAdapter(list, requireContext()) { data, action, pos ->
-            when (action) {
-//                "action" -> callChangeStatusApi(data.id.toString(), data.status.toString(), pos)
-                "more" -> {
-                    MoreOptionFragment().apply {
-                        innterface = object : MoreOption {
-                            override fun view() {
-                                vieww.launch(
-                                    Intent(
-                                        requireContext(),
-                                        UserViewActivity::class.java
-                                    ).putExtra("id", data.id)
-                                )
-                                dismiss()
-                            }
 
-                            override fun control() {
-                            }
-
-                            override fun delete() {
-                                withNetwork { callDeleteApi(data.id.toString(), pos) }
-                                dismiss()
-                            }
-
-                        }
-                    }.show(requireActivity().supportFragmentManager, "")
-                }
-                "control" -> {
-                    if (data.key_type==5 && data.payment_term != 1){
-                        showToast("No Emi for this anti theft")
-                    }else {
-                        startActivity(
-                            Intent(
-                                requireContext(),
-                                ControlsActivity::class.java
-                            ).putExtra("id", data.id)
-                        )
-                    }
-                }
-            }
-
-        }
-        binding.userListRecyler.adapter = adapter
 
 //        binding.clearSearch.setOnClickListener {
 //            binding.searchEt.text.clear()
@@ -212,7 +170,50 @@ class UserListFragment : Fragment() {
                         response.body()?.let {
                             list.clear()
                             list.addAll(it.customer)
-                            adapter.notifyDataSetChanged()
+                            adapter = UserAdapter(list, requireContext()) { data, action, pos ->
+                                when (action) {
+//                "action" -> callChangeStatusApi(data.id.toString(), data.status.toString(), pos)
+                                    "more" -> {
+                                        MoreOptionFragment().apply {
+                                            innterface = object : MoreOption {
+                                                override fun view() {
+                                                    vieww.launch(
+                                                        Intent(
+                                                            requireContext(),
+                                                            UserViewActivity::class.java
+                                                        ).putExtra("id", data.id)
+                                                    )
+                                                    dismiss()
+                                                }
+
+                                                override fun control() {
+                                                }
+
+                                                override fun delete() {
+                                                    withNetwork { callDeleteApi(data.id.toString(), pos) }
+                                                    dismiss()
+                                                }
+
+                                            }
+                                        }.show(requireActivity().supportFragmentManager, "")
+                                    }
+                                    "control" -> {
+                                        if (data.key_type==5 && data.payment_term != 1){
+                                            showToast("No Emi for this anti theft")
+                                        }else {
+                                            startActivity(
+                                                Intent(
+                                                    requireContext(),
+                                                    ControlsActivity::class.java
+                                                ).putExtra("id", data.id)
+                                            )
+                                        }
+                                    }
+                                }
+
+                            }
+                            binding.userListRecyler.adapter = adapter
+                            binding.userListRecyler.setHasFixedSize(true)
                             filterList("")
                         }
                     }
