@@ -61,8 +61,18 @@ class UserQrActivity : AppCompatActivity() {
                 when (response.code()) {
                     200 -> {
                         response.body()?.let {
-                            binding.qr.setImageBitmap(it.qr.base64ToBitmap())
-                            binding.appQr.loadImage(Constants.BASEURL+"storage/"+it.app)
+
+                            try {
+                                if(intent.getIntExtra("type",0) == 3){
+                                    binding.appQr.loadImage(Constants.BASEURL+"storage/"+it.app)
+                                }else{
+                                    binding.qr.setImageBitmap(it.qr.base64ToBitmap())
+                                }
+                            }catch (ex: Exception){
+
+                            }
+
+
                             binding.id.text = intent.getStringExtra("id").toString()
                         }
                     }
