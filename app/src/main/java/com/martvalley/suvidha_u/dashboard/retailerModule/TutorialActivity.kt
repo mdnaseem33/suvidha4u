@@ -28,7 +28,7 @@ class TutorialActivity : AppCompatActivity() {
         binding.userListRecyler.apply {
             layoutManager = LinearLayoutManager(this@TutorialActivity, LinearLayoutManager.VERTICAL, false)
         }
-        adapter = VideoAdapter(this@TutorialActivity, list)
+        adapter = VideoAdapter(this@TutorialActivity, this@TutorialActivity , list)
         binding.userListRecyler.adapter = adapter
         binding.searchEt.text.clear()
         binding.searchEt.addTextChangedListener(object : TextWatcher {

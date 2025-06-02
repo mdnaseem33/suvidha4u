@@ -110,7 +110,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="suvidha_u.fileprovider"
+            android:authorities="com.martvalley.suvidha_u.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

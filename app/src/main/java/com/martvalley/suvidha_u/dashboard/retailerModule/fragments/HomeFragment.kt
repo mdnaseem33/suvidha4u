@@ -248,7 +248,14 @@ class HomeFragment : Fragment() {
             }
 
             binding.explore.totalCustomer.setOnClickListener {
-                startActivity(Intent(context, TotalRetailersActivity::class.java))
+                try {
+                    val bundle = Bundle().apply {
+                        putString("type", "total")
+                    }
+                    (requireActivity() as DashBoardNewActivity).changeNav(R.id.userListFragment, bundle)
+                }catch (e:Exception){
+                    e.printStackTrace()
+                }
             }
 
             binding.explore.activeCustomer.setOnClickListener {

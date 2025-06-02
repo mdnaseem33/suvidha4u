@@ -104,8 +104,8 @@ class DeviceFragment : Fragment() {
         list2.add(Control.DeviceActionOld(sm = "twitter", display = "Twitter", value = false, "list1"))
         list2.add(Control.DeviceActionOld(sm = "thread", display = "Thread", value = false, "list1"))
 
-        list3.add(Control.DeviceActionOld(sm = "location", display = "Location", value = false, "list3"))
-        list3.add(Control.DeviceActionOld(sm = "call_list", display = "Call List", value = false, "list3"))
+        //list3.add(Control.DeviceActionOld(sm = "location", display = "Location", value = false, "list3"))
+        //list3.add(Control.DeviceActionOld(sm = "call_list", display = "Call List", value = false, "list3"))
         list3.add(Control.DeviceActionOld(sm = "mobile_no", display = "Mobile No.", value = false, "list3"))
         list3.add(Control.DeviceActionOld(sm = "online_check", display = "Online", value = false, "list3"))
         list3.add(Control.DeviceActionOld(sm = "sr", display = "Soft Reset", value = true, "list1"))

@@ -2,10 +2,12 @@ package com.martvalley.suvidha_u.dashboard.settings.retail
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.guardanis.applock.AppLock
@@ -65,7 +67,17 @@ class RetailerSettingFragment : Fragment() {
         //binding.audio.tv.text = "Audio Customize"
 
         binding.support.root.setOnClickListener {
-            startActivity(Intent(requireContext(), ChatBotActivity::class.java))
+            val phoneNumber = "919899105410" // Include country code
+            val url = "https://wa.me/$phoneNumber"
+
+            try {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                intent.setPackage("com.whatsapp")
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "WhatsApp not installed.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.msg.root.setOnClickListener {
