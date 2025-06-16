@@ -51,9 +51,9 @@
                 <include
                     android:id="@+id/profile"
                     layout="@layout/setting_item" />
-<!--                <include-->
-<!--                    android:id="@+id/frp"-->
-<!--                    layout="@layout/setting_item" />-->
+                <include
+                    android:id="@+id/frp"
+                    layout="@layout/setting_item" />
 
                 <include
                     android:id="@+id/qrCode"
@@ -101,8 +101,8 @@
                 android:fontFamily="@font/roboto_medium"
                 android:linksClickable="true"
                 android:text="@string/_022_69646511"
-                android:textColor="@color/light_blue"
-                android:textColorLink="@color/light_blue"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white"
                 android:textSize="@dimen/_12sdp" />
 
             <TextView

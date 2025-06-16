@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     android:orientation="vertical"
     tools:context=".dashboard.settings.SettingFragment">
 
@@ -68,8 +67,8 @@
         android:text="011-69290609"
         android:linksClickable="true"
         android:autoLink="phone"
-        android:textColorLink="@color/light_blue"
-        android:textColor="@color/light_blue"
+        android:textColorLink="@color/white"
+        android:textColor="@color/white"
         android:textSize="@dimen/_12sdp" />
 
     <TextView

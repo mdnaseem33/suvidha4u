@@ -106,7 +106,8 @@ object Retailer {
 
     data class CreditRetailerRequest(
         val amount: String,
-        val id: String
+        val id: String,
+        val notes: String?
     )
 
     data class AntiCreditRetailerRequest(
@@ -159,7 +160,7 @@ object Retailer {
         val closing: Int,
         val created_at: String,
         val id: Int,
-        val notes: Any,
+        val notes: String,
         val opening: Int,
         val reciever: Reciever,
         val reciever_id: Int,

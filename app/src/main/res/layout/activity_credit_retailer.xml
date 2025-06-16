@@ -61,7 +61,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <EditText
         android:id="@+id/email_et"
@@ -84,6 +84,40 @@
         app:layout_constraintStart_toStartOf="@+id/email_tv"
         app:layout_constraintTop_toBottomOf="@+id/email_tv" />
 
+    <TextView
+        android:id="@+id/remarks_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Remarks"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_et" />
+
+    <EditText
+        android:id="@+id/remarks_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/edittext_bg"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Enter credit amount..."
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="@dimen/_6sdp"
+        android:text=""
+        android:textColor="@color/blue"
+        android:textColorHint="#788094"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/remarks_tv"
+        app:layout_constraintTop_toBottomOf="@+id/remarks_tv" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn"
         android:layout_width="wrap_content"
@@ -99,7 +133,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_et" />
+        app:layout_constraintTop_toBottomOf="@+id/remarks_et" />
 
     <ProgressBar
         android:id="@+id/pb"

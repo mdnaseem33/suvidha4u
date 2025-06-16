@@ -1,12 +1,14 @@
 package com.martvalley.suvidha_u.dashboard.retailerModule.fragments
 
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.martvalley.suvidha_u.R
 import com.martvalley.suvidha_u.databinding.TransactionItemBinding
+import com.martvalley.suvidha_u.utils.show
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
@@ -15,6 +17,7 @@ class TransactionAdapter(var mList: ArrayList<AllTransactionData.Transaction>, v
 
     inner class  ViewHolder(val binding: TransactionItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: AllTransactionData.Transaction, user_id: Int?) {
+
             if(data.sender_id == user_id){
                 binding.typeTextView.text = "Debit"
                 binding.typeTextView.setTextColor(itemView.context.resources.getColor(R.color.red))
@@ -22,8 +25,16 @@ class TransactionAdapter(var mList: ArrayList<AllTransactionData.Transaction>, v
                 binding.typeTextView.text = "Credit"
                 binding.typeTextView.setTextColor(itemView.context.resources.getColor(android.R.color.holo_green_dark))
             }
-            binding.senderTextView.text = "Sender: ${data.sender.name}"
-            binding.receiverTextView.text = "Receiver: ${data.reciever.name}"
+            if (data.sender!= null)
+                binding.senderTextView.text = "Sender: ${data.sender.name}"
+            else
+                binding.senderTextView.text = "Sender: Deleted User"
+
+            if (data.reciever!=null)
+                binding.receiverTextView.text = "Receiver: ${data.reciever.name}"
+            else
+                binding.receiverTextView.text = "Receiver: Deleted User"
+
             binding.amountTextView.text = "${data.amount}"
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -31,6 +42,11 @@ class TransactionAdapter(var mList: ArrayList<AllTransactionData.Transaction>, v
                     DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm a"))
             }else{
                 binding.dateReceiver.text = data.created_at!!
+            }
+
+            if (data.notes!=null && data.notes != "null") {
+                binding.remarksTextView.show()
+                binding.remarksTextView.text = "Notes: ${data.notes}"
             }
         }
     }

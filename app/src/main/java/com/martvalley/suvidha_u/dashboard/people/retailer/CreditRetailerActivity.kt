@@ -23,17 +23,21 @@ class CreditRetailerActivity : AppCompatActivity() {
 
         binding.btn.setOnClickListener {
             val amt = binding.emailEt.text.trim().toString()
+            val remarks = binding.remarksEt.text.trim().toString()
             if (amt.isEmpty()) {
                 showToast("Please enter amount.")
+            }
+            else if (remarks.isEmpty()){
+                showToast("Please enter remarks.")
             } else {
-                withNetwork { callCreditApi(amt) }
+                withNetwork { callCreditApi(amt, remarks) }
             }
         }
     }
 
-    private fun callCreditApi(amt: String) {
+    private fun callCreditApi(amt: String, remarks: String) {
         binding.pb.show()
-        val request = Retailer.CreditRetailerRequest(amt, id.toString())
+        val request = Retailer.CreditRetailerRequest(amt, id.toString(), remarks)
         val call = RetrofitInstance.apiService.creditRetailerApi(request)
         call.enqueue(object : Callback<Retailer.StatusChangeResponse> {
             override fun onResponse(
@@ -46,6 +50,7 @@ class CreditRetailerActivity : AppCompatActivity() {
                         response.body()?.let {
                             showToast(it.message)
                             binding.emailEt.text.clear()
+                            binding.remarksEt.text.clear()
                         }
                     }
                     else -> {

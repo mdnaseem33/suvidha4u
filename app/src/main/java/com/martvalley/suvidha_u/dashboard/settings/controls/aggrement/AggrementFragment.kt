@@ -100,7 +100,7 @@ class AggrementFragment : Fragment() {
         pdfDocument.finishPage(page)
 
         // Save the PDF document
-        val pdfFile = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "$fileName.pdf")
+        val pdfFile = File(context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "$fileName.pdf")
 
         try {
             pdfDocument.writeTo(FileOutputStream(pdfFile))

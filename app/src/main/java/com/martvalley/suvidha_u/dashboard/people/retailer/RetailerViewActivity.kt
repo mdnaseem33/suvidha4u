@@ -37,6 +37,7 @@ class RetailerViewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         withNetwork { callViewApi() }
+        binding.debitBtn.hide()
 
         binding.toolbar.arrow.setOnClickListener { onBackPressed() }
         binding.toolbar.text.text = "Retailer Detail"

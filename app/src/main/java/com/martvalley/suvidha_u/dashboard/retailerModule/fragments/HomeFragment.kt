@@ -242,7 +242,8 @@ class HomeFragment : Fragment() {
                     e.printStackTrace()
                 }
             }
-        }else{
+        }
+        else{
             binding.explore.todayActivation.setOnClickListener {
                 startActivity(Intent(requireContext(), RetailerTodaysActivationActivity::class.java))
             }

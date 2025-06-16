@@ -33,7 +33,7 @@ class DebitRetailerActivity : AppCompatActivity() {
 
     private fun callApi(amt: String) {
         binding.pb.show()
-        val request = Retailer.CreditRetailerRequest(amt, id.toString())
+        val request = Retailer.CreditRetailerRequest(amt, id.toString(), "")
         val call = RetrofitInstance.apiService.debitRetailerApi(request)
         call.enqueue(object : Callback<Retailer.StatusChangeResponse> {
             override fun onResponse(

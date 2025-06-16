@@ -709,9 +709,17 @@ class DeviceFragment : Fragment() {
                             }catch (e: Exception){
                             }
                             if( it.customer.is_set_wallpaper == "1"){
-                                it.action.swd.value = false
+                                it.action.swd.value = true
+                                list2.forEach {
+                                    if (it.sm == "swd")
+                                        it.value = false
+                                }
                             }else{
                                 it.action.swd.value = false
+                                list2.forEach {
+                                    if (it.sm == "swd")
+                                        it.value = true
+                                }
                             }
                             setList1Data(it.action)
                         }
